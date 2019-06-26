@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
 
     val ship = Ship()
 
-    // ship.hitpoints = 100
+    // ship.hitpoints = 100 // notice that this is not accessible from the outside
 
     ship.fire()
 
