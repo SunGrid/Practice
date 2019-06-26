@@ -1,41 +1,19 @@
 
-import kotlin.math.*
-
-class Person(private var firstName: String, private var lastName: String, age: Int) {
-
-    var age: Int = 0
-/*        set(value) {
-            var newAge = value
-
-            if (value < 0) newAge = 0
-            if (value > 100) newAge = 100
-
-            field = newAge
-        }*/
-        set(value) { field = min(max(value, 0), 100) }
-                            // when min return the max
-                            //when the max return the min?
-
-    init {
-        this.age = age
+object StringUtils {
+    fun startsWithUpperCase(value: String?): Boolean {
+/*        if (value.isNullOrBlank()) {
+            return false
+        }
+        return value!![0].isUpperCase()
+*/
+        return !(value.isNullOrBlank()) && value!![0].isUpperCase()
     }
 
-    private val fullName: String
-        get() = firstName + " " + lastName
-
-    fun printInfo() {
-        println("First name = $firstName Last name = $lastName Full Name = $fullName age = $age")
-    }
 }
 
 fun main(args: Array<String>) {
 
-    val me = Person("Michael", "Lonnecker", 48)
-    me.printInfo()
+    val myString = "Kotlin"
 
-    val minch = Person("Minch", "Yoda", 900)
-    minch.printInfo()
-
-    val benjamin = Person("Benjamin", "Button", -20)
-    benjamin.printInfo()
+    println("toLower= ${myString.toLowerCase()}")
 }
