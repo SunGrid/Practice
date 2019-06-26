@@ -1,14 +1,20 @@
+
+import kotlin.math.*
+
 class Person(private var firstName: String, private var lastName: String, age: Int) {
 
     var age: Int = 0
-        set(value) {
+/*        set(value) {
             var newAge = value
 
             if (value < 0) newAge = 0
             if (value > 100) newAge = 100
 
             field = newAge
-        }
+        }*/
+        set(value) { field = min(max(value, 0), 100) }
+                            // when min return the max
+                            //when the max return the min?
 
     init {
         this.age = age
