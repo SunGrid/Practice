@@ -1,48 +1,35 @@
-class Ship {
+class Person(private var firstName: String, private var lastName: String, age: Int) {
 
-    private val bullets = arrayOf("Laser", "RailGun")
+    var age: Int = 0
+        set(value) {
+            var newAge = value
 
-    var hitpoints = 100
-        private set
+            if (value < 0) newAge = 0
+            if (value > 100) newAge = 100
 
-    fun fire() {
-        var bullet = bullets[0]
-
-        if (hitpoints > 50) {
-            bullet = bullets[1]
+            field = newAge
         }
 
-        println("Firing $bullet")
+    init {
+        this.age = age
     }
 
-    fun takeDamage(amount: Int) {
-        if (amount > 0) {
-            hitpoints -= amount
+    private val fullName: String
+        get() = firstName + " " + lastName
 
-            if (hitpoints < 0) {
-                hitpoints = 0
-            }
-        }
+    fun printInfo() {
+        println("First name = $firstName Last name = $lastName Full Name = $fullName age = $age")
     }
 }
 
 fun main(args: Array<String>) {
 
-    val ship = Ship()
+    val me = Person("Michael", "Lonnecker", 48)
+    me.printInfo()
 
-    // ship.hitpoints = 100 // notice that this is not accessible from the outside
+    val minch = Person("Minch", "Yoda", 900)
+    minch.printInfo()
 
-    ship.fire()
-
-    ship.takeDamage(10)
-    println("ship hp= ${ship.hitpoints}")
-
-    ship.fire()
-    ship.takeDamage(50)
-    println("ship hp= ${ship.hitpoints}")
-
-    ship.fire()
-    ship.takeDamage(100)
-    println("ship hp= ${ship.hitpoints}")
-
+    val benjamin = Person("Benjamin", "Button", -20)
+    benjamin.printInfo()
 }
