@@ -1,37 +1,80 @@
+/* Inheritance and Polymorphism
 
-object StringUtils {
-/*
-    fun startsWithUpperCase(value: String?): Boolean {
-        if (value.isNullOrBlank()) {
-            return false
+ */
+open class Enemy(health: Int, var weapon: String) {
+
+    var health: Int = 0
+        set(value){
+            field = value
+
+            if (value < 0){
+                field = 0
+            }
         }
-        return value!![0].isUpperCase()
-        return !(value.isNullOrBlank()) && value!![0].isUpperCase()
+    var damage: Int = 0
+
+    init {
+        //without this.health = health, passed from mian, the var health up above will be set to 0 and run at 0
+        this.health = health
+
+        println("Enemy inint called")
     }
-*/
-    fun startsWithUpperCase(value: String?) : Boolean = !(value.isNullOrBlank()) && value!![0].isUpperCase()
+
+    //polymorphic parameter
+    open fun attack(enemy: Enemy) {
+        println("attacking $enemy with $weapon")
+        enemy.takeDamage(damage)
+    }
+
+    fun takeDamage(damageToTake: Int) {
+        health -= damageToTake
+    }
+
 }
 
-// extension method. used in place of decorator pattern.
-fun String?.startsWithUpperCase() : Boolean = !(this.isNullOrBlank()) && this!![0].isUpperCase()
+class Pikeman(health: Int, var armor: Int) : Enemy(health, "pike") {
 
-//fun Int.multiplyBy(multiplier: Int) = this * multiplier
-// if single value parameter then using the keyword infix is nice
-infix fun Int.multiplyBy(multiplier: Int) = this * multiplier
+    init {
+        println("Pikeman init called")
+    }
+}
+
+class Archer(health: Int, var arrowCount: Int) : Enemy(health, "bow") {
+
+    init {
+        println("Archer init called")
+    }
+
+    override fun attack(enemy: Enemy) {
+        if (arrowCount <= 0) {
+            println("no more arrows")
+        } else {
+            super.attack(enemy)
+            arrowCount--
+            println("arrows left = $arrowCount")
+        }
+    }
+}
 
 fun main(args: Array<String>) {
 
-    val myString = "Kotlin"
+    //vals being declared as "Enemy"
+    val pikeman: Enemy = Pikeman(100, 100)
+    pikeman.damage = 40
 
-    println("toLower= ${myString.toLowerCase()}")
+    val archer: Enemy = Archer(health = 100, arrowCount = 5)
+    archer.damage = 60
 
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase(myString)}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase(null)}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase("")}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase("kotlin")}")
+    pikeman.attack(archer)
+    println("pikeman health = ${pikeman.health} archer health = ${archer.health}")
 
-    println("startsWithUpper extension method = ${myString.startsWithUpperCase()}")
+    archer.attack(pikeman)
+    println("pikeman health = ${pikeman.health} archer health = ${archer.health}")
 
-    println("multiplyBy = ${5.multiplyBy(3)}")
-    println("multiplyBy = ${5 multiplyBy 5}") //with infix keyword used.
+    pikeman.attack(archer)
+    println("pikeman health = ${pikeman.health} archer health = ${archer.health}")
+
+    archer.attack(pikeman)
+    println("pikeman health = ${pikeman.health} archer health = ${archer.health}")
+
 }
