@@ -1,37 +1,68 @@
+import java.util.*
 
-object StringUtils {
-/*
-    fun startsWithUpperCase(value: String?): Boolean {
-        if (value.isNullOrBlank()) {
-            return false
-        }
-        return value!![0].isUpperCase()
-        return !(value.isNullOrBlank()) && value!![0].isUpperCase()
+
+class Person(private val name: String, private var age: Int){
+    init{
+        println("Person $name was created")
     }
-*/
-    fun startsWithUpperCase(value: String?) : Boolean = !(value.isNullOrBlank()) && value!![0].isUpperCase()
+    
+    constructor(name: String): this(name, Random().nextInt()){
+        println("Secondary constructor involved")
+    }
+    
+    fun describeMe() = println("My name is $name and I am $age years old")
 }
 
-// extension method. used in place of decorator pattern.
-fun String?.startsWithUpperCase() : Boolean = !(this.isNullOrBlank()) && this!![0].isUpperCase()
+fun evenOdd(str1: String = "str1", str2: String = "str-2") : Boolean{
+	 if ( (str1.length % 2  == 0) || (str2.length % 2 == 0) ){
+         return true       
+     } else {
+         return false
+     }    
+}
 
-//fun Int.multiplyBy(multiplier: Int) = this * multiplier
-// if single value parameter then using the keyword infix is nice
-infix fun Int.multiplyBy(multiplier: Int) = this * multiplier
+/*
+fun String.evenOdd() : Boolean {
+    if (this.isNullOrEmpty()) return false
+    if (this.length % 2 == 0) {
+        return true
+    }else {
+        return false
+    }
+}
+*/
+fun String.evenOdd() = !this.isNullOrEmpty() && this.length % 2 == 0
 
-fun main(args: Array<String>) {
+object stringUtils{ // list static method
+	fun sumOfChars(str1: String? = "", str2: String? = "") : Int {
+   		
+        if ( str1.isNullOrEmpty() && str2.isNullOrEmpty() ) {
+            return 0
+        }else if (str1.isNullOrEmpty() ){
+               return str2!!.length            
+        }else if (str2.isNullOrEmpty() ){
+            return str1!!.length
+        }
+        
+	    return str1!!.length + str2!!.length
+	}
+}
 
-    val myString = "Kotlin"
 
-    println("toLower= ${myString.toLowerCase()}")
+fun main() {
+	 Person("Michael").describeMe()  
+    
+    println("Strings and such")   
+    println( evenOdd("value"))
 
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase(myString)}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase(null)}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase("")}")
-    println("startsWithUpper = ${StringUtils.startsWithUpperCase("kotlin")}")
-
-    println("startsWithUpper extension method = ${myString.startsWithUpperCase()}")
-
-    println("multiplyBy = ${5.multiplyBy(3)}")
-    println("multiplyBy = ${5 multiplyBy 5}") //with infix keyword used.
+	var myString = "Kotlin is Cool"
+    
+    println("String is true if even amount of chars: ${myString.evenOdd()}")    
+    
+    println("${stringUtils.sumOfChars("hello","This is cool")}")
+    println("${stringUtils.sumOfChars()}")
+    println("${stringUtils.sumOfChars("r","")}")
+    println("${stringUtils.sumOfChars(null, null)}")
+        
+    
 }
