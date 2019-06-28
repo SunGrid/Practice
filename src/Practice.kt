@@ -14,7 +14,7 @@ open class Enemy(health: Int, var weapon: String) {
     var damage: Int = 0
 
     init {
-        //without this.health = health, passed from mian, the var health up above will be set to 0 and run at 0
+        //without this.health = health, passed from mian method, the var health up above will be set to 0 and run at 0
         this.health = health
 
         println("Enemy inint called")
