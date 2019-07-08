@@ -1,56 +1,82 @@
 /*
-overloading operators and complex numbers.
-Override toString
-*/
+Composition = "Has relationship" (eg. Car has wheels, engine, doors, seats, etc)
+where inheritance was "is relationship" (eg. Car is vehicle, dog is animal)
+More flexible. Combine simple types to make more complex types
 
-class ComplexNumber( val real: Float, val imaginary: Float) {
+ */
+// **********Component Pattern**********
+interface BasicComponent
 
-    operator fun plus(other: ComplexNumber) : ComplexNumber {
-        return ComplexNumber(real + other.real, imaginary + other.imaginary)
-    }
+class Health(var amount: Int) : BasicComponent
+class Weapon(var name: String) : BasicComponent
+class Armor(var amount: Int) : BasicComponent
 
-    operator fun minus(other: ComplexNumber) : ComplexNumber {
-        return ComplexNumber(real - other.real, imaginary - other.imaginary)
-    }
+class MilitaryUnit(var name: String) {
 
-    operator fun times(other: ComplexNumber) : ComplexNumber {
-//   (a + bi) * (c + di) = (ac - bd) + (bc + ad)i
-//   (2 + 2i) * (3 - 5i)
-// = (2 * 3 - 2 * (-5)) + (2 * 3 + 2 * (-5))i
-// = (6 - (-10)) + (6 + (-10))i
-// = (6 + 10) + (6 - 10 )i
-// = 16 - 4i
-        //                         (ac           -           bd)
-        val realResult = real * other.real - imaginary * other.imaginary
-        //                                   (bc           +      ad)
-        val imaginaryResult = imaginary * other.real + real * other.imaginary
+    private val componentsByName = hashMapOf<String, BasicComponent>()
 
-        return ComplexNumber(realResult, imaginaryResult)
-    }
+    fun addComponent(name: String, component: BasicComponent) = componentsByName.put(name, component)
+
+    fun removeComponent(name: String) = componentsByName.remove(name)
+
+    fun getComponent(name: String) : BasicComponent? =  componentsByName[name]
 
     override fun toString(): String {
-
-        var sign = "+"
-
-        if (imaginary < 0){
-            sign = "-"
-        }
-        return "$real $sign ${Math.abs(imaginary)}i"
+        val componentsString= componentsByName.keys.joinToString(", ")
+        return "name = $name components = $componentsString"
     }
+
 }
 
+
 fun main(){
-    val first = ComplexNumber (2f, 2f)
-    val second = ComplexNumber(3f, -5f)
 
-    println("first = $first")
-    println("second = $second")
+// pikeman
+    val pikemanHealth = Health(100)
+    val pike = Weapon("pike")
+    val pikemanArmor = Armor(100)
 
-    val sum = first + second
+    val pikeman = MilitaryUnit("pikeman")
+    pikeman.addComponent("health", pikemanHealth)
+    pikeman.addComponent("weapon", pike)
+    pikeman.addComponent("armor", pikemanArmor)
 
+    println("pikeman: $pikeman")
 
-    println("sum = $sum")
-    println("first-second = ${first - second}")
-    println("first*second = ${first * second}")
+// archer
+    val archerHealth = Health(80)
+    val bow = Weapon("bow")
+    val archerArmor = Armor(50)
 
+    val archer = MilitaryUnit("archer")
+    archer.addComponent("health", archerHealth)
+    archer.addComponent("weapon", bow)
+    archer.addComponent("armor", archerArmor)
+
+    println("archer: $archer")
+
+// swordsman
+    val swordsmanHealth = Health(100)
+    val sword = Weapon("sword")
+    val swordsmanArmor = Armor(75)
+
+    val swordsman = MilitaryUnit("swordsman")
+    swordsman.addComponent("health", swordsmanHealth)
+    swordsman.addComponent("weapon", sword)
+    swordsman.addComponent("armor", swordsmanArmor)
+
+    println("swordsman: $swordsman")
+
+//medic
+    val medicHealth = Health(50)
+    val medic = MilitaryUnit("medic")
+    medic.addComponent("health", medicHealth)
+
+    println("medic: $medic")
+
+    val medicWeapon = medic.getComponent("weapon")
+    println("medic hasWeapon ${medicWeapon != null}")
+
+    val pikemanWeapon = pikeman.getComponent("weapon") as Weapon
+    println("pikeman weapon = ${pikemanWeapon.name}")
 }
