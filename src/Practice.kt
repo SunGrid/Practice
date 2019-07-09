@@ -10,6 +10,7 @@ interface BasicComponent
 class Health(var amount: Int) : BasicComponent
 class Weapon(var name: String) : BasicComponent
 class Armor(var amount: Int) : BasicComponent
+class Speed(var amount: Int) : BasicComponent
 
 class MilitaryUnit(var name: String) {
 
@@ -35,11 +36,13 @@ fun main(){
     val pikemanHealth = Health(100)
     val pike = Weapon("pike")
     val pikemanArmor = Armor(100)
+    val pikemanSpeed = Speed(6)
 
     val pikeman = MilitaryUnit("pikeman")
     pikeman.addComponent("health", pikemanHealth)
     pikeman.addComponent("weapon", pike)
     pikeman.addComponent("armor", pikemanArmor)
+    pikeman.addComponent("speed", pikemanSpeed)
 
     println("pikeman: $pikeman")
 
@@ -69,14 +72,19 @@ fun main(){
 
 //medic
     val medicHealth = Health(50)
+    val medicSpeed = Speed(10)
+
     val medic = MilitaryUnit("medic")
     medic.addComponent("health", medicHealth)
+    medic.addComponent("speed", medicSpeed)
 
     println("medic: $medic")
 
     val medicWeapon = medic.getComponent("weapon")
-    println("medic hasWeapon ${medicWeapon != null}")
+    val medicGetSpeed = medic.getComponent("speed") as Speed // cast to Speed or a null value with incure
+    println("medic hasWeapon ${medicWeapon != null}, speed = ${medicGetSpeed.amount}")
 
     val pikemanWeapon = pikeman.getComponent("weapon") as Weapon
-    println("pikeman weapon = ${pikemanWeapon.name}")
+    val pikemanGetSpeed = pikeman.getComponent("speed") as Speed
+    println("pikeman weapon = ${pikemanWeapon.name}, speed = ${pikemanGetSpeed.amount}")
 }
