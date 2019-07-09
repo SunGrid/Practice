@@ -16,11 +16,13 @@ class MilitaryUnit(var name: String) {
 
     private val componentsByName = hashMapOf<String, BasicComponent>()
 
-    fun addComponent(name: String, component: BasicComponent) = componentsByName.put(name, component)
+    //fun addComponent(name: String, component: BasicComponent) = componentsByName.put(name, component)
+    operator fun set(name: String, component: BasicComponent) = componentsByName.put(name, component) // []
 
     fun removeComponent(name: String) = componentsByName.remove(name)
 
-    fun getComponent(name: String) : BasicComponent? =  componentsByName[name]
+    //fun getComponent(name: String) : BasicComponent? =  componentsByName[name]
+    operator fun get(name: String) : BasicComponent? = componentsByName[name]
 
     override fun toString(): String {
         val componentsString= componentsByName.keys.joinToString(", ")
@@ -39,10 +41,10 @@ fun main(){
     val pikemanSpeed = Speed(6)
 
     val pikeman = MilitaryUnit("pikeman")
-    pikeman.addComponent("health", pikemanHealth)
-    pikeman.addComponent("weapon", pike)
-    pikeman.addComponent("armor", pikemanArmor)
-    pikeman.addComponent("speed", pikemanSpeed)
+    pikeman["health"] = pikemanHealth
+    pikeman["weapon"] = pike
+    pikeman["armor"] = pikemanArmor
+    pikeman["speed"] = pikemanSpeed
 
     println("pikeman: $pikeman")
 
@@ -52,9 +54,9 @@ fun main(){
     val archerArmor = Armor(50)
 
     val archer = MilitaryUnit("archer")
-    archer.addComponent("health", archerHealth)
-    archer.addComponent("weapon", bow)
-    archer.addComponent("armor", archerArmor)
+    archer["health"] = archerHealth
+    archer["weapon"] = bow
+    archer["armor"] =archerArmor
 
     println("archer: $archer")
 
@@ -64,9 +66,9 @@ fun main(){
     val swordsmanArmor = Armor(75)
 
     val swordsman = MilitaryUnit("swordsman")
-    swordsman.addComponent("health", swordsmanHealth)
-    swordsman.addComponent("weapon", sword)
-    swordsman.addComponent("armor", swordsmanArmor)
+    swordsman["health"] = swordsmanHealth
+    swordsman["weapon"] = sword
+    swordsman["armor"] = swordsmanArmor
 
     println("swordsman: $swordsman")
 
@@ -75,16 +77,16 @@ fun main(){
     val medicSpeed = Speed(10)
 
     val medic = MilitaryUnit("medic")
-    medic.addComponent("health", medicHealth)
-    medic.addComponent("speed", medicSpeed)
+    medic["health"] = medicHealth
+    medic["speed"] = medicSpeed
 
     println("medic: $medic")
 
-    val medicWeapon = medic.getComponent("weapon")
-    val medicGetSpeed = medic.getComponent("speed") as Speed // cast to Speed or a null value with incure
+    val medicWeapon = medic["weapon"]
+    val medicGetSpeed = medic["speed"] as Speed // cast to Speed or a null value with incure
     println("medic hasWeapon ${medicWeapon != null}, speed = ${medicGetSpeed.amount}")
 
-    val pikemanWeapon = pikeman.getComponent("weapon") as Weapon
-    val pikemanGetSpeed = pikeman.getComponent("speed") as Speed
+    val pikemanWeapon = pikeman["weapon"] as Weapon
+    val pikemanGetSpeed = pikeman["speed"] as Speed
     println("pikeman weapon = ${pikemanWeapon.name}, speed = ${pikemanGetSpeed.amount}")
 }
