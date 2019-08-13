@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="26d72de9-7083-4c3c-b705-67d50bd14116" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Functions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practice/META-INF/Practice.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practice/META-INF/Practice.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practice/PracticeKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practice/PracticeKt.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>min</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="OverLoadingOperators" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Practice.kt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1P9gUPZH3NbffXrVYPw2uWrZ5E1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/libGDXProjects/gbxSampler/build.gradle" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Kotlin.FunctionsKt">
+    <configuration name="FunctionsKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Practice" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="FunctionsKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PracticeKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Practice" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="PracticeKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.FunctionsKt" />
+        <item itemvalue="Kotlin.PracticeKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26d72de9-7083-4c3c-b705-67d50bd14116" name="Default Changelist" comment="" />
+      <created>1560995645854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560995645854</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Encapsulation &#10;var hitpoints = 100&#10;    private set">
+      <created>1561521224794</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561521224794</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Encapsulation &#10;var hitpoints = 100&#10;    private set">
+      <created>1561521520740</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561521520740</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Person class with constructor, age as parameter and initialized in init block.">
+      <created>1561574428021</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561574428021</updated>
+    </task>
+    <task id="LOCAL-00004" summary="set(value) { field = min(max(value,0),100) }">
+      <created>1561589787726</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561589787726</updated>
+    </task>
+    <task id="LOCAL-00005" summary="return !(value.isNullOrBlank()) &amp;&amp; value!![0].isUpperCase()">
+      <created>1561593269232</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561593269232</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fun startsWithUpperCase (value:String?) :Boolean = !(value.isNullOrBlank()) &amp;&amp; value??.[0].isUpperCase()">
+      <created>1561593648150</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561593648150</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Extention Methods fun String.startsWith() : ...&#10;infix fun Int.multiplyBy(mult: Int) = this * mult&#10;...">
+      <created>1561596364247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561596364247</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Extention Methods fun String.startsWith() : ...&#10;infix fun Int.multiplyBy(mult: Int) = this * mult&#10;...">
+      <created>1562214057232</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562214057232</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Overloading Operators compx nums, Override toString">
+      <created>1562216418570</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562216418570</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Overload minus and times operators. Complex number with formula">
+      <created>1562271129947</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562271129947</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Component Pattern with marker interface and implementations">
+      <created>1562617335203</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1562617335203</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Component Pattern with marker interface and implementations">
+      <created>1562633922934</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562633922934</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Component Pattern with marker interface and implementations">
+      <created>1562633935365</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1562633935365</updated>
+    </task>
+    <task id="LOCAL-00014" summary="overloaded operators set and get to use [] in place of previous methods for hashMapOf&lt;Sting, BasicComponent&gt;()">
+      <created>1562634943624</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1562634943624</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Ship" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Ship" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Encapsulation &#10;var hitpoints = 100&#10;    private set" />
+    <MESSAGE value="Person class with constructor, age as parameter and initialized in init block." />
+    <MESSAGE value="set(value) { field = min(max(value,0),100) }" />
+    <MESSAGE value="return !(value.isNullOrBlank()) &amp;&amp; value!![0].isUpperCase()" />
+    <MESSAGE value="fun startsWithUpperCase (value:String?) :Boolean = !(value.isNullOrBlank()) &amp;&amp; value??.[0].isUpperCase()" />
+    <MESSAGE value="Extention Methods fun String.startsWith() : ...&#10;infix fun Int.multiplyBy(mult: Int) = this * mult&#10;..." />
+    <MESSAGE value="Overloading Operators compx nums, Override toString" />
+    <MESSAGE value="Overload minus and times operators. Complex number with formula" />
+    <MESSAGE value="Component Pattern with marker interface and implementations" />
+    <MESSAGE value="overloaded operators set and get to use [] in place of previous methods for hashMapOf&lt;Sting, BasicComponent&gt;()" />
+    <option name="LAST_COMMIT_MESSAGE" value="overloaded operators set and get to use [] in place of previous methods for hashMapOf&lt;Sting, BasicComponent&gt;()" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Practice</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
