@@ -56,5 +56,4 @@ fun infixFunction() {
     val a = 3.0
     val b = 10.0
     println ("The avg of $a and $b is ${a averageWidth b}")
-
 }
